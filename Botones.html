@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones de Sonido</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            position: relative;
+            overflow: hidden;
+            background-image: url('https://i.pinimg.com/236x/b6/78/69/b6786907e75a650f6eb61ed0fc8daf07.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Capa de fondo opaca */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% de opacidad */
+            z-index: 1; /* Asegura que esté detrás del contenido */
+        }
+
+        @keyframes rgbChange {
+            0% { color: rgb(255, 0, 0); }   /* Rojo */
+            33% { color: rgb(0, 255, 0); }  /* Verde */
+            66% { color: rgb(0, 0, 255); }  /* Azul */
+            100% { color: rgb(255, 0, 0); } /* Rojo */
+        }
+
+        .rgb-text {
+            animation: rgbChange 3s infinite; /* Cambia de color cada 3 segundos */
+            position: relative; /* Para que esté por encima de la capa de fondo */
+            z-index: 2; /* Asegura que esté por encima del fondo */
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center h-screen bg-gray-100">
+
+    <h1 class="text-3xl font-bold mb-12 rgb-text">Botones By Gianmario🔥🔥</h1>
+
+    <button id="fantasma" class="mb-4 p-0 rounded-full overflow-hidden border border-blue-500 hover:border-blue-700 z-10">
+        <img src="https://i1.sndcdn.com/artworks-70Pj6BzlwIozTb4Z-36KnEQ-t500x500.jpg" alt="Fantasma" class="w-32 h-32 object-cover">
+    </button>
+
+    <button id="cringe" class="mb-4 p-0 rounded-full overflow-hidden border border-red-500 hover:border-red-700 z-10">
+        <img src="https://i.pinimg.com/474x/1d/2e/f5/1d2ef55380f94e903c4b304a8587683d.jpg" alt="Cringe" class="w-32 h-32 object-cover">
+    </button>
+
+    <button id="formidable" class="mb-4 p-0 rounded-full overflow-hidden border border-green-500 hover:border-green-700 z-10">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR63SF22Nm1CvwbU05WDTAGlSn89C51ANQdgA&s" alt="Formidable" class="w-32 h-32 object-cover">
+    </button>
+
+    <audio id="audioFantasma" src="./WhatsApp Audio 2025-03-07 at 9.02.09 PM.mpeg"></audio>
+    <audio id="audioCringe" src="./WhatsApp Audio 2025-03-07 at 9.21.02 PM.mpeg"></audio>
+    <audio id="audioFormidable" src="./WhatsApp Audio 2025-03-07 at 9.15.30 PM.mpeg"></audio>
+
+    <script>
+        document.getElementById('fantasma').onclick = function() {
+            document.getElementById('audioFantasma').play();
+        };
+
+        document.getElementById('cringe').onclick = function() {
+            document.getElementById('audioCringe').play();
+        };
+
+        document.getElementById('formidable').onclick = function() {
+            document.getElementById('audioFormidable').play();
+        };
+    </script>
+</body>
+</html>
